@@ -1,10 +1,28 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable react/jsx-no-undef */
 import "./home.scss";
+import Sidebar from "../../components/sidebar/Sidebar";
+import Navbar from "../../components/navbar/Navbar";
+import Widget from "../../components/widget/Widget";
 
 const Home = () => {
     return (
-        <div>Home</div>
-    )
-}
+        <div className="home">
+            <Sidebar />
+            <div className="homeContainer">
+                <Navbar />
+                <div className="widgets">
+                    <Widget type="user" />
+                    <Widget type="order" />
+                    <Widget type="earning" />
+                    <Widget type="balance" />
+                </div>
+                <div className="charts">
+                    <Chart type="order" aspect={2 / 1} />
+                    <Chart type="earning" aspect={2 / 1} />
+                </div>
+            </div>
+        </div>
+    );
+};
 
-export default Home
+export default Home;
