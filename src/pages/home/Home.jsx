@@ -3,6 +3,7 @@ import "./home.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
+import Chart from "../../components/chart/Chart";
 
 const Home = () => {
     return (
