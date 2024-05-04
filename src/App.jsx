@@ -2,12 +2,13 @@
 // eslint-disable-next-line no-unused-vars
 import { useState } from "react";
 import Home from "./pages/home/Home";
+import MyList from "./pages/mylist/MyList";
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { productInputs, userInputs } from "./formsource";
+import { productInputs, userInputs, categoriInputs } from "./formsource";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={<Home />}></Route>
+            <Route index element={<MyList />}></Route>
             <Route path="login" element={<Login />}></Route>
             <Route path="users">
               <Route index element={<List />}></Route>
@@ -31,6 +33,14 @@ function App() {
               <Route
                 path="new"
                 element={<New inputs={productInputs} title="Add New Product" />}
+              />
+            </Route>
+            <Route path="categories">
+              <Route index element={<MyList />}></Route>
+              <Route path=":categoriId" element={<Single />}></Route>
+              <Route
+                path="new"
+                element={<New inputs={categoriInputs} title="Add New Categori" />}
               />
             </Route>
           </Route>
