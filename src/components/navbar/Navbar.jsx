@@ -1,13 +1,13 @@
 import "./navbar.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-// eslint-disable-next-line no-unused-vars
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import { DarkModeContext } from '../../context/darkModeContext';
 import { useContext } from "react";
-// eslint-disable-next-line no-unused-vars
-import { DarkModeContext } from "../../context/darkModeContext";
-
 
 const Navbar = () => {
+    const { darkMode, dispatch } = useContext(DarkModeContext);
+
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -17,9 +17,17 @@ const Navbar = () => {
                 </div>
                 <div className="items">
                     <div className="item">
-                        <DarkModeOutlinedIcon className="icon"
-                            // eslint-disable-next-line no-undef
-                            onClick={() => dispatch({ type: "TOGGLE" })} />
+                        {darkMode ? (
+                            <LightModeOutlinedIcon
+                                className="icon"
+                                onClick={() => dispatch({ type: 'TOGGLE' })}
+                            />
+                        ) : (
+                            <DarkModeOutlinedIcon
+                                className="icon"
+                                onClick={() => dispatch({ type: 'TOGGLE' })}
+                            />
+                        )}
                     </div>
                     <div className="item">
                         <img

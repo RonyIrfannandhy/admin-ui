@@ -1,14 +1,16 @@
+
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
-import Chart from "../../components/chart/Chart";
-import "./home.scss";
+import Mydatatable from "../../components/mydatatable/MyDatatable";
+import "./mylist.scss";
 
-const Home = () => {
+
+const Mylistdata = () => {
     return (
-        <div className="home">
+        <div className="mylistdata">
             <Sidebar />
-            <div className="homeContainer">
+            <div className="mylistdataContainer">
                 <Navbar />
                 <div className="widget">
                     <Widget type="user" />
@@ -16,13 +18,13 @@ const Home = () => {
                     <Widget type="category" />
 
                 </div>
-                <div className="charts">
-                    <Chart type="order" aspect={2 / 1} />
-                    <Chart type="earning" aspect={2 / 1} />
-                </div>
+                <div className="mydatatable"></div>
+                <Mydatatable />
+
+
             </div>
         </div>
     );
 };
 
-export default Home;
+export default Mylistdata;

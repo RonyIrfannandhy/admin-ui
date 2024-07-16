@@ -1,14 +1,10 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// eslint-disable-next-line no-unused-vars
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    // eslint-disable-next-line no-undef
-    apiKey: process.env.REACT_APP_FIREBASE_KEY,
+    apiKey: "AIzaSyAJRK4tOTCcdY-Gy6Pglf3mIqYX89pceVY",
     authDomain: "store-tutorial-c250b.firebaseapp.com",
     projectId: "store-tutorial-c250b",
     storageBucket: "store-tutorial-c250b.appspot.com",
@@ -16,7 +12,8 @@ const firebaseConfig = {
     appId: "1:473704181643:web:b3cdca9b98fb9f6748098e"
 };
 
-// Initialize Firebase
-// eslint-disable-next-line no-unused-vars
+
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
+export const db = getFirestore(app);
+export const storage = getStorage(app);

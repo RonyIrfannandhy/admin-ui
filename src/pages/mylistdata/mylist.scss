@@ -1,7 +1,7 @@
-.home {
+.mylistdata {
   display: flex;
 
-  .homeContainer {
+  .mylistdataContainer {
     flex: 6;
 
     .widget {
@@ -59,14 +59,6 @@
         }
       }
     }
-    .charts {
-      display: flex;
-      padding: 20px;
-      gap: 20px;
+    
     }
-
-        .charts {
-      padding: 5px 20px;
-    }
-}
 }
